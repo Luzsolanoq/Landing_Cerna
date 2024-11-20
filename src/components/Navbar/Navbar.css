@@ -1,0 +1,140 @@
+/* Navbar base */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 65px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease;
+  background-color: aqua; /* Fondo azul (o el color que prefieras) */
+}
+
+.navbar-item {
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
+  margin-left: 20px;
+  text-decoration: none;
+  display: flex;  /* Esto asegura que el texto y los elementos del navbar se alineen bien */
+  align-items: center;
+}
+
+.navbar-item1 {
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
+ 
+  text-decoration: none;
+}
+
+/* Navbar sticky con fondo opaco */
+.navbar-sticky {
+  background-color: rgb(255, 255, 255); /* Fondo blanco opaco */
+}
+
+/* Navbar transparente */
+.navbar-transparent {
+  background-color: rgba(255, 255, 255, 0.089);
+}
+
+/* Estilos para el contenedor de "Cotizaciones" */
+.navbar-item-cotizaciones {
+  position: relative; /* Necesario para posicionar los submenús */
+  cursor: pointer;
+}
+
+/* Submenú de Cotizaciones */
+.navbar-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  z-index: 100;
+}
+
+.navbar-submenu a {
+  padding: 10px;
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+  display: block;
+}
+
+/* Mostrar submenú cuando se pasa el ratón */
+.navbar-item-cotizaciones:hover .navbar-submenu {
+  display: block;
+}
+
+/* Estilos para los items del submenú */
+.navbar-submenu a:hover {
+  background-color:#F02E2F;
+  color: white;
+}
+
+  
+  /* Logo */
+  .navbar-logo {
+    position: absolute;
+    left: 1rem;
+    width: 55px;
+    height: 55px;
+  }
+  
+  /* Menú en pantallas grandes */
+  .navbar-menu {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+  }
+  
+  /* Botón Ingresar */
+  .navbar-button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #BD0026;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    width: 120px;
+  }
+  
+  .navbar-button:hover {
+    background-color: #BD0026;
+  }
+  
+  /* Icono de hamburguesa en pantallas pequeñas */
+  .navbar-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+  }
+  
+  /* Menú desplegable en pantallas pequeñas */
+  .navbar-dropdown {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco opaco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
