@@ -85,7 +85,7 @@
     position: absolute;
     left: 1rem;
     width: 55px;
-    height: 55px;
+    height: auto;
   }
   
   /* Menú en pantallas grandes */

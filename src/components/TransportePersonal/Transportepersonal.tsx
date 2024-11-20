@@ -1,154 +1,106 @@
 import React from 'react'
-import camion from "../../assets/camion.jpg";
+import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
+import mapa from "../../assets/logo_rojo.png"; // Imagen del mapa o un iframe de Google Maps
+
 
 const Transportepersonal = () => {
+  const faqs = [
+    {
+      pregunta: "¿Cómo puedo realizar un seguimiento de mi envío?",
+      respuesta: "Puedes ingresar el número de rastreo en la sección de seguimiento en nuestra página principal.",
+    },
+    {
+      pregunta: "¿Cuáles son los tiempos de entrega promedio?",
+      respuesta: "Los tiempos de entrega varían según la distancia y el tipo de envío, generalmente entre 1 a 5 días hábiles.",
+    },
+    {
+      pregunta: "¿Qué tipos de encomiendas aceptan?",
+      respuesta: "Aceptamos sobres, paquetes pequeños y grandes, sujetos a nuestras políticas de transporte.",
+    },
+    {
+      pregunta: "¿Qué hacer si mi encomienda no ha llegado?",
+      respuesta: "Puedes contactarnos directamente al WhatsApp o correo para verificar el estado de tu envío.",
+    },
+  ];
+
   return (
-    <div className="pt-[65px]">
-      {/* Imagen de portada */}
-      <div>
-        <img
-          src={camion}
-          alt="Transportes Cerna 2"
-          className="w-full h-[580px] object-cover"
-        />
+    <section className="bg-gray-100 py-20 px-8 md:px-24">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-semibold text-red-500">Contáctanos</h2>
+        <p className="text-gray-600 mt-4">Estamos aquí para ayudarte con cualquier duda o consulta.</p>
       </div>
 
-      {/* Sección de contenido */}
-      <section className="py-20 bg-gray-100 px-24">
-        <div className="flex flex-col mb-8">
-          <div className="w-16 h-1 bg-red-500 mb-4"></div>
-          <h2 className="text-4xl text-left font-medium mb-2 text-red-500">Cotización de Transporte Personal</h2>
+      {/* Preguntas frecuentes */}
+      <div className="mb-16">
+        <h3 className="text-2xl font-medium text-red-500 mb-6">Preguntas Frecuentes</h3>
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <div key={index} className="bg-white p-6 rounded shadow-md">
+              <h4 className="text-lg font-semibold text-gray-700">{faq.pregunta}</h4>
+              <p className="text-gray-600 mt-2">{faq.respuesta}</p>
+            </div>
+          ))}
         </div>
-        <p className="font-light text-justify">
-            Si desea comunicarse directamente con nuestra Gerencia Comercial, estos son los datos:
-        </p>
-        <p className="font-light text-justify ">
-           <strong>Contacto: </strong>Roberto Vega Narváez
-        </p>
-        <p className="font-light text-justify ">
-           <strong>Celular:</strong> 976310257
-        </p>
-        <p className="font-light text-justify mb-5">
-            <strong>Correo electrónico:</strong> rvegan@linea.pe
-        </p>
-        <p className="font-light text-justify mb-10">
-              De lo contario, ingrese sus datos en el siguiente formulario y nos comunicaremos con usted:
-        </p>
+      </div>
 
-        {/* Formulario de cotización */}
-        <form className="bg-white p-8 shadow-md rounded">
-          {/* Datos Personales / Empresariales */}
-          <h2 className="text-xl font-medium mb-4">Datos Personales / Empresariales</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 mr-15">
-            <div>
-              <label className="block font-normal text-sm mb-1">RUC o DNI</label>
-              <input
-                type="text"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Ingrese su RUC o DNI"
-              />
-            </div>
-            <div>
-              <label className="block font-normal text-sm mb-1">Nombre o Razón Social</label>
-              <input
-                type="text"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Ingrese su Nombre o Razón Social"
-              />
-            </div>
-            <div>
-              <label className="block font-normal text-sm mb-1">Persona a Contactar</label>
-              <input
-                type="text"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Persona a contactar"
-              />
-            </div>
-            <div>
-              <label className="block font-normal text-sm mb-1">Email</label>
-              <input
-                type="email"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Correo electrónico"
-              />
-            </div>
-            <div>
-              <label className="block font-normal text-sm mb-1">Teléfono</label>
-              <input
-                type="tel"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Teléfono de contacto"
-              />
-            </div>
+      {/* Ubicación */}
+      <div className="mb-16">
+        <h3 className="text-2xl font-medium text-red-500 mb-6">Nuestra Ubicación</h3>
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          {/* Mapa */}
+          <div className="flex-1">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5805.510577573364!2d-79.00751047852145!3d-8.097373099097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad163cfd0d1a99%3A0xf23c77572a7b8690!2sTransportes%20CERNA%20SRL.!5e0!3m2!1ses!2spe!4v1732101859532!5m2!1ses!2spe"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            title="Ubicación"
+          ></iframe>
           </div>
+          {/* Dirección */}
+          <div className="flex-1">
+            <p className="text-lg text-gray-700 mb-4">
+              📍 Calle Ejemplo 123, Distrito X, Ciudad Y, País Z.
+            </p>
+            <p className="text-gray-600">Horario de atención: Lunes a Viernes de 9:00 AM a 6:00 PM.</p>
+          </div>
+        </div>
+      </div>
 
-          {/* Datos de Envío */}
-          <h2 className="text-xl font-medium mb-4">Datos de la Operación</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            <div>
-              <label className="block font-normal text-sm mb-1">Zona de Operaciones</label>
-              <input
-                type="tel"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Zona de Operaciones"
-              />
-            </div>
-            <div>
-              <label className="block font-normal text-sm mb-1">Número de Unidades</label>
-              <input
-                type="tel"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Número de Unidades"
-              />
-            </div>
-            <div>
-              <label className="block font-normal text-sm mb-1">Número de viajes Diario</label>
-              <input
-                type="tel"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Número de viajes Diario"
-              />
-            </div>
-          </div>
-          <div className="mb-6">
-            <label className="block font-normal text-sm mb-1">Recorrido Aproximado (Km)</label>
-            <input
-                type="tel"
-                className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-                placeholder="Recorrido Aproximado"
-              />
-          </div>
-
-          <div className="mb-6">
-            <label className="block font-normal text-sm mb-1">Describa brevemente las actividades de su operación</label>
-            <textarea
-              className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-              placeholder="Ingrese actividades"
-              rows="4"
-            ></textarea>
-          </div>
-
-          {/* Captcha */}
-          <div className="mb-6 flex items-center">
-            <span className="bg-gray-200 text-lg px-4 py-2 rounded mr-4">2B05B0</span>
-            <input
-              type="text"
-              className="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none font-light"
-              placeholder="Ingrese el código de seguridad"
-            />
-          </div>
-
-          {/* Botón */}
-          <button
-            type="submit"
-            className="bg-red-500 text-white font-semibold px-6 py-3 rounded hover:bg-red-600"
+      {/* Redes sociales */}
+      <div className="text-center">
+        <h3 className="text-2xl font-medium text-red-500 mb-6">Síguenos en Redes Sociales</h3>
+        <div className="flex justify-center gap-8">
+          <a
+            href="https://wa.me/1234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-500 text-3xl hover:text-green-600"
           >
-            Cotizar
-          </button>
-        </form>
-      </section>
-    </div>
-  )
-}
+            <FaWhatsapp />
+          </a>
+          <a
+            href="https://facebook.com/tuempresa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 text-3xl hover:text-blue-600"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://instagram.com/tuempresa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-500 text-3xl hover:text-pink-600"
+          >
+            <FaInstagram />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Transportepersonal
