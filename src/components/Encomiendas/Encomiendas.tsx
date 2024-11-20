@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import camion from "../../assets/camion.jpg";
+import logo2 from "../../assets/img03.jpg";
 import cotizacion from "../../assets/cotizacion.png";
 
 const Encomiendas = () => {
@@ -36,7 +36,7 @@ const Encomiendas = () => {
       {/* Imagen de portada */}
       <div>
         <img
-          src={camion}
+          src={logo2}
           alt="Transportes Cerna 2"
           className="w-full h-[580px] object-cover"
         />
